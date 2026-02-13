@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The GCSE Guide</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1E4D2B">
+
+</head>
+<body>
+
+<header class="header">
+    <img src="logo.png" class="logo">
+    <h1>The GCSE Guide</h1>
+</header>
+
+<div class="content">
+
+    <!-- EXAMS PAGE -->
+    <div id="examsPage" class="page active">
+        <button class="primary add-btn" onclick="openModal()">+ Add Exam</button>
+        <div id="examList"></div>
+    </div>
+
+    <!-- TIMETABLE PAGE -->
+    <div id="calendarPage" class="page">
+        <div class="calendar-header">
+            <button onclick="changeMonth(-1)">‹</button>
+            <h2 id="monthTitle"></h2>
+            <button onclick="changeMonth(1)">›</button>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+    </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+    <button onclick="showPage('exams')">Exams</button>
+    <button onclick="showPage('calendar')">Timetable</button>
+</nav>
+
+<!-- Modal -->
+<div id="modal" class="modal-overlay hidden">
+    <div class="modal">
+        <h2>Add Exam</h2>
+        <input id="subject" placeholder="Subject">
+        <input id="date" type="date">
+        <input id="time" type="time">
+        <input id="duration" placeholder="Duration (e.g. 1h 30m)">
+        <input id="candidate" placeholder="Candidate Number">
+        <input id="revision" placeholder="What to revise">
+        <button class="primary" onclick="saveExam()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
